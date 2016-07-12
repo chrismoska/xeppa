@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="livroApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Início</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/starter-template.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+<header>
+
+ <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Exibir Navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Meus Livros</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li navbar-active="principal"><a href="#principal">Home</a></li>
+            <li navbar-active="livros"><a href="#livros">Livros</a></li>
+            <li navbar-active="autores"><a href="#autores">Autores</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</header>
+
+<section>
+<main>
+
+    <div class="container" ui-view></div>
+
+</main>
+
+</section>
+
+<footer>
+</footer>
+    <script src="app/lib/jquery.min.js"></script>
+    <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/angular-resource.js"></script>
+    <script src="app/lib/angular-ui-router.min.js"></script>
+    <script src="app/lib/bootstrap.min.js"></script>
+    <script src="app/app.js"></script>
+
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/livro/livro.service.js"></script>
+    <script src="app/livro/livro.controller.js"></script>  
+    <script src="app/autor/autor.service.js"></script>
+    <script src="app/autor/autor.controller.js"></script>  
+   
+    <script src="app/directive/directives.js"></script>
+  </body>
+</html>
+
+
+

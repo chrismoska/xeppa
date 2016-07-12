@@ -1,0 +1,20 @@
+<form ng-submit="salvar()">
+	<div class="form-group">
+		<label for="titulo" >Título</label>
+		<input type="text"  placeholder="" required class="form-control" ng-model="livro.titulo"/>
+	</div>
+	<div class="form-group">
+		<label for="paginas">Páginas</label>
+		<input type="number"  placeholder="" class="form-control" ng-model="livro.paginas" />
+	</div>
+		<div class="form-group">
+		<label for="resumo">Resumo</label>
+		<textarea class="form-control" ng-model="livro.resumo" />
+	</div>
+	<div class="form-group">
+		<label for="autor">Autor</label>
+		<select ng-model="livro.autor" ng-options="obj as obj.nome for obj in autores track by obj.id" class="form-control">			
+		</select>
+	</div>
+	<button type="submit" class="btn btn-success">Salvar</button>
+</form>

@@ -1,0 +1,15 @@
+<article>
+    		<h1>{{autor.nome}}</h1>
+    		<dl class="dl-horizontal">
+            
+    			<dt>Nacionalidade</dt>
+    			<dd>{{autor.nacionalidade}}</dd> 
+    		</dl>
+            <hr />
+            <h3>Livros</h3>
+            <ul>
+                <li ng-repeat="livro in livros">
+                    {{livro.titulo}}
+                </li>
+            </ul>
+</article>

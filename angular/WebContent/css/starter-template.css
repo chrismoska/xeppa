@@ -1,0 +1,43 @@
+
+
+th:last-child, td:last-child {
+        background-color: #ccc;
+}
+
+button.btn + button.btn + button.btn {
+        font-weight: bold;
+}
+
+button.btn.btn-warning {
+        font-style: italic;
+}
+
+#container button:not(.btn):not(.btn-warning) {
+ /*       font-style: italic; */
+}
+
+main > div:not(.container) {
+        text-decoration: underline;
+}
+
+*:disabled {
+        color: #999;
+}
+/*
+td[lang="en"] {
+        font-style: italic;
+}
+
+td:empty {
+        background-color: #999;
+}
+
+input:required::before {
+        content: "*";
+}
+
+button:hover, button:focus{
+   transform: perspective(500px) translateZ(200px);
+   box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+   transition: transform 1s ease-in;  
+}*/

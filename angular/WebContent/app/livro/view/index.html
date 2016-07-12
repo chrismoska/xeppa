@@ -1,0 +1,26 @@
+  <div class="form-group">
+    <a class="btn btn-success" ui-sref="novoLivro">Novo Livro</a>   
+ </div>
+
+ <table class="table table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Páginas</th>
+                <th>Autor</th>                
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="livro in livros">
+                <td>{{livro.titulo}}</td>                
+                <td>{{livro.paginas}}</td>            
+                <td><serpro-tooltip nacionalidade="{{livro.autor.nacionalidade}}" nome="{{livro.autor.nome}}"></serpro-tooltip></td>            
+                <td>
+                    <a class="btn btn-warning btn-xs" ui-sref="editarLivro({id: livro.id})">Editar</a>
+                    <a class="btn btn-danger btn-xs" ng-click="delete(livro.id)">Excluir</a>
+                    <a class="btn btn-default btn-xs" ui-sref="viewLivro({id: livro.id})">Exibir</a>
+                </td>
+            </tr>           
+        </tbody>
+</table>
