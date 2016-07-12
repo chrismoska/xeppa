@@ -1,4 +1,4 @@
-APP.directive('serproTooltip', function(){
+angular.module("livroApp").directive('serproTooltip', function(){
 	return {
 		restrict: 'E',
 		replace: 'true', 
@@ -15,7 +15,7 @@ APP.directive('serproTooltip', function(){
 	}
 });
 
-APP.directive('navbarActive', ['$location', function(location){
+angular.module("livroApp").directive('navbarActive', ['$location', function(location){
 	return{
 		restrict:'A',
 		link: function(scope, element, attrs){

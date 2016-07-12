@@ -1,4 +1,6 @@
-APP.controller('LivroController', function($scope, $state, LivroService){
+angular.module("livro", []).controller('LivroController', LivroController);
+/*ngInject*/
+function LivroController($scope, $state, LivroService){
 	$scope.livros = LivroService.query();
 
 	$scope.delete = function(idLivro){
@@ -6,10 +8,11 @@ APP.controller('LivroController', function($scope, $state, LivroService){
 				$scope.livros = LivroService.query();
 			});
 	};
+}
 
-});
-
-APP.controller('LivroNovoController', function($scope, $state, LivroService, AutorService){
+angular.module("livro").controller('LivroNovoController', LivroNovoController);
+/*ngInject*/
+function LivroNovoController($scope, $state, LivroService, AutorService){
 	$scope.livro = new LivroService();
 	$scope.autores = AutorService.query();	
 
@@ -18,9 +21,11 @@ APP.controller('LivroNovoController', function($scope, $state, LivroService, Aut
 				$state.go('livros');
 			});
 	};
-});
+}
 
-APP.controller('LivroEditarController', function($scope, $state, $stateParams, LivroService, AutorService){
+angular.module("livro").controller('LivroEditarController', LivroEditarController);
+/*ngInject*/
+function LivroEditarController($scope, $state, $stateParams, LivroService, AutorService){
 	$scope.livro = LivroService.get({ id: $stateParams.id });
 	$scope.autores = AutorService.query();	
 
@@ -29,8 +34,10 @@ APP.controller('LivroEditarController', function($scope, $state, $stateParams, L
 				$state.go('livros');
 			});
 	};
-});
+}
 
-APP.controller('LivroViewController', function($scope, $state, $stateParams, LivroService){
+angular.module("livro").controller('LivroViewController',LivroViewController );
+/*ngInject*/
+function LivroViewController($scope, $state, $stateParams, LivroService){
 	$scope.livro = LivroService.get({ id: $stateParams.id });	
-});
+}

@@ -1,4 +1,7 @@
-APP.factory("AutorService", function($resource){
+angular.module("autor").factory("AutorService", AutorService);
+
+/*ngInject*/
+function AutorService($resource){
 	return $resource('http://localhost:8080/livros/api/autores/:id', {id: '@_id'}, {
 		update: {
 			method: 'PUT',
@@ -7,4 +10,4 @@ APP.factory("AutorService", function($resource){
 			isArray: false
 		}
 	});	
-});
+}

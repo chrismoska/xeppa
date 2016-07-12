@@ -1,16 +1,21 @@
-APP.controller('AutorController', function($scope, $state, AutorService){
-	$scope.autores = AutorService.query();
+angular.module("autor",[]).controller('AutorController', AutorController);
 
+
+/*@ngInject*/
+function AutorController($scope, $state, AutorService){
+	$scope.autores = AutorService.query();
 	$scope.delete = function(idAutor){
 			AutorService.remove({id: idAutor}, function(){
 				$scope.autores = AutorService.query();
 			});
 	};
+}
 
-});
 
+angular.module("autor").controller('AutorNovoController', AutorNovoController);
 
-APP.controller('AutorNovoController', function($scope, $state, AutorService){
+/*@ngInject*/
+function AutorNovoController($scope, $state, AutorService){
 	$scope.autor = new AutorService();
 	
 	$scope.salvar = function(){
@@ -18,9 +23,12 @@ APP.controller('AutorNovoController', function($scope, $state, AutorService){
 				$state.go('autores');
 			});
 	};
-});
+}
 
-APP.controller('AutorEditarController', function($scope, $state, $stateParams, AutorService){
+angular.module("autor").controller('AutorEditarController', AutorEditarController);
+
+/*@ngInject*/
+function AutorEditarController($scope, $state, $stateParams, AutorService){
 	$scope.autor = AutorService.get({ id: $stateParams.id });
 	
 	$scope.salvar = function(){
@@ -28,10 +36,13 @@ APP.controller('AutorEditarController', function($scope, $state, $stateParams, A
 				$state.go('autores');
 			});
 	};
-});
+}
 
-APP.controller('AutorViewController', function($scope, $state, $stateParams, AutorService, LivroService){
+angular.module("autor").controller('AutorViewController', AutorViewController);
+
+/*@ngInject*/
+function AutorViewController($scope, $state, $stateParams, AutorService, LivroService){
 	$scope.autor = AutorService.get({ id: $stateParams.id });	
 	$scope.livros = LivroService.getByAutor({ id: $stateParams.id });
-});
+}
 

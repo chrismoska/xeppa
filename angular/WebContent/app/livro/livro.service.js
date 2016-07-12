@@ -1,4 +1,6 @@
-APP.factory("LivroService", function($resource){
+angular.module("livro").factory("LivroService", LivroService);
+/*ngInject*/
+function LivroService($resource){
 	return $resource('http://localhost:8080/livros/api/livros/:id', {id: '@_id'}, {
 		update: {
 			method: 'PUT',
@@ -13,4 +15,4 @@ APP.factory("LivroService", function($resource){
 			isArray: true
 		}
 	});	
-});
+}
